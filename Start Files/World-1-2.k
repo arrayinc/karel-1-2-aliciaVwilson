@@ -5,3 +5,20 @@
  */
 
 import "turns";
+
+function potholeFill(){
+	move();
+	turnRight();
+	move();
+	putBeeper();
+	turnAround();
+	move();
+	turnRight();
+	move();
+}
+
+function FillPotholes(){
+	potholeFill();
+	move();
+	potholeFill();
+}
