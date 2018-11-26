@@ -6,19 +6,36 @@
 
 import "turns";
 
-function potholeFill(){
+
+function FillPotholes(){
 	move();
-	turnRight();
+	potholeCheck();
 	move();
-	putBeeper();
-	turnAround();
 	move();
-	turnRight();
+	move();
+	potholeCheck();
 	move();
 }
 
-function FillPotholes(){
-	potholeFill();
+function potholeCheck(){
+	if (rightIsClear()){
+		turnRight();
+		move();
+		if (noBeepersPresent()){
+			putBeeper();
+		}
+		turnAround();
+		move();
+		turnRight();
+	}
+}
+
+function returnToStart(){
+	turnAround();
 	move();
-	potholeFill();
+	move();
+	move();
+	move();
+	move();
+	turnAround();
 }
